@@ -17,19 +17,18 @@
                 
              case "modifier":
             
-                $maRequete = "UPDATE `plantes` SET `nom` = '".$_POST["nom"]."',`description` = '".$_POST["description"]."' WHERE `plantes`.`id` =".$_GET["id"];
+                $maRequete = "UPDATE `plantes` SET `nom` = '".$_POST["nom"]."',`description` = '".$_POST["description"]."',`prix` = '".$_POST["prix"]."' WHERE `plantes`.`id` =".$_GET["id"];
                  break;
+            
             
             case "supprimer":
             
                 $maRequete = "DELETE FROM `plantes` WHERE `plantes`.`id` =".$_GET["id"];
                 break;
 
-
         }
 
         $mysqli->query($maRequete) ; 
-
 
     }
         // redirection par defaut
