@@ -1,6 +1,7 @@
 <?php 
 
      $nom=`nc`;
+     $description=`nc`;
      $title="Ajouter";
      $lienCrud="crud.php?action=ajouter";
 
@@ -15,8 +16,15 @@
             //var_dump($rqPlante);
 
         if ($rqPlante->num_rows> 0){
-            $row= $row['nom']->fetch_assoc();
+
+            $row= $rqPlante->fetch_assoc();
             
+            $nom =$row ['nom'] ;
+
+            $description =$row['description'] ;
+
+
+        }
     } 
 ?>
 
@@ -32,7 +40,7 @@
 
     <label for="">Description de la plante</label>
 
-    <input type="text" name="description" id="">
+    <input type="text" name="description" value="<?php echo $description ;?>" id="">
 
 
     <label for="">Prix de la plante</label>

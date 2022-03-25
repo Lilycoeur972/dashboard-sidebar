@@ -12,19 +12,23 @@
 
                $maRequete ="INSERT INTO `plantes` (`id`,`nom`,`description`,`prix`,`dateins`) VALUES (NULL, '".$_POST["nom"]."','".$_POST["description"]."', '".$_POST["prix"]."',CURRENT_TIMESTAMP)";
 
-               
                    //echo "i égal 0";
                 break;
+                
+             case "modifier":
+            
+                $maRequete = "UPDATE `plantes` SET `nom` = '".$_POST["nom"]."',`description` = '".$_POST["description"]."' WHERE `plantes`.`id` =".$_GET["id"];
+                 break;
             
             case "supprimer":
             
-
                 $maRequete = "DELETE FROM `plantes` WHERE `plantes`.`id` =".$_GET["id"];
                 break;
 
+
         }
 
-     $mysqli->query($maRequete) ; 
+        $mysqli->query($maRequete) ; 
 
 
     }
